@@ -94,6 +94,7 @@
       <DependentUpon>SetDueDateDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\ActiveFilterToStatusConvertor.cs" />
+    <Compile Include="Converters\ColoredItemConverter.cs" />
     <Compile Include="Converters\SortTypeToDescriptionConvertor.cs" />
     <Compile Include="ExceptionExtensions.cs" />
     <Compile Include="GroupConverter.cs" />
@@ -131,6 +132,7 @@
       <DependentUpon>User.settings</DependentUpon>
     </Compile>
     <Compile Include="Utilities\EnumExtensions.cs" />
+    <Compile Include="Utilities\TaskParser.cs" />
     <Compile Include="WindowLocation.cs" />
     <Page Include="Controls\DeleteConfirmationDialog.xaml">
       <SubType>Designer</SubType>

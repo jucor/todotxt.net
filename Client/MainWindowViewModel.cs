@@ -1586,7 +1586,13 @@ namespace Client
                 User.Default.TaskListFontStyle != o.TaskListFont.Style.ToString() ||
                 User.Default.TaskListFontWeight != o.TaskListFont.Weight.ToString() ||
                 User.Default.TaskListFontStretch != o.TaskListFont.Stretch.ToString() ||
-                User.Default.TaskListFontBrushColor != o.TaskListFont.BrushColor.ToString()
+                User.Default.TaskListFontBrushColor != o.TaskListFont.BrushColor.ToString() ||
+                User.Default.ProjectColor != o.cpProject.SelectedColor.Name ||
+                User.Default.ContextColor != o.cpContext.SelectedColor.Name ||
+                User.Default.KeyValueColor != o.cpKeyValue.SelectedColor.Name ||
+                User.Default.PriorityAColor != o.cpPriorityA.SelectedColor.Name ||
+                User.Default.PriorityBColor != o.cpPriorityB.SelectedColor.Name ||
+                User.Default.PriorityCColor != o.cpPriorityC.SelectedColor.Name
                 );
 
             User.Default.ArchiveFilePath = o.tbArchiveFile.Text;
@@ -1617,6 +1623,13 @@ namespace Client
             User.Default.TaskListFontStretch = o.TaskListFont.Stretch.ToString();
             User.Default.TaskListFontBrushColor = o.TaskListFont.BrushColor.ToString();
 
+            User.Default.ProjectColor = o.cpProject.SelectedColor.Name;
+            User.Default.ContextColor = o.cpContext.SelectedColor.Name;
+            User.Default.KeyValueColor = o.cpKeyValue.SelectedColor.Name;
+            User.Default.PriorityAColor = o.cpPriorityA.SelectedColor.Name;
+            User.Default.PriorityBColor = o.cpPriorityB.SelectedColor.Name;
+            User.Default.PriorityCColor = o.cpPriorityC.SelectedColor.Name;
+
             User.Default.DisplayStatusBar = o.cbDisplayStatusBar.IsChecked.Value;
             User.Default.CheckForUpdates = o.cbCheckForUpdates.IsChecked.Value;
 
@@ -1635,6 +1648,7 @@ namespace Client
 
             if (updateTaskListRequired)
             {
+                Converters.ColoredItemConverter.ReloadTheme();
                 _window.SetFont();
                 GetSelectedTasks();
                 UpdateDisplayedTasks();
