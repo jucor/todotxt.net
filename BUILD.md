@@ -7,6 +7,8 @@ How to build todotxt.exe, without installing VisualStudio, on Windows 10.
 - Download and Install NuGet client tool from [Nuget Microsoft website](https://docs.microsoft.com/en-us/nuget/reference/nuget-exe-cli-reference#installing-nugetexe)
 - Add NuGet.exe to path
 - `nuget.exe restore` to install the mshtml 7 dependency
-- Download and Install .NET framework 3.5 to get the right version of Microsoft.Build.Utilities.v3.5, from [MS website](https://www.microsoft.com/en-us/download/details.aspx?id=21)
+- (Not sure this is needed) Download and Install .NET framework 3.5 to get the right version of Microsoft.Build.Utilities.v3.5, from [MS website](https://www.microsoft.com/en-us/download/details.aspx?id=21)
+- Download and Install InnoSetup v5
+- `nuget.exe install MSBuildTasks`
 - Into the `Installer` folder, run `MSBuild.exe .\Build.xml`
 - Enjoy, the installer and the portable version are in `Installer\Output`
